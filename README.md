@@ -1,12 +1,14 @@
 ```bash
-diskutil list
-diskutil eraseDisk ExFAT WIN10 GPT diskX
+diskutil list external
 
-open Win11_25H2_English_x64.iso
+diskutil partitiondisk disk2 mbr fat32 MYFAT32 8G exfat MyExFAT R
+
+xattr -c win.iso
+
+hdiutil attach win.iso
+
 cd /Volumes/CCCOMA_X64FRE_EN-US_DV9
-sudo cp -r . /Volumes/WIN10/
 
-cd ~
-diskutil eject /Volumes/WIN10
-diskutil eject /Volumes/CCCOMA_X64FRE_EN-US_DV9
+rsync -r -t --exclude=sources/install.wim . /Volumes/MYFAT32
+cp sources/install.wim /Volumes/MyExFAT
 ```
