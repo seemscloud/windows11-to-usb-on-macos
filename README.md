@@ -1,5 +1,3 @@
-# windows11-to-usb-on-macos
-
 ```bash
 diskutil list
 diskutil eraseDisk ExFAT WIN10 GPT diskX
