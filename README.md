@@ -14,3 +14,9 @@ cd ~
 hdiutil detach /Volumes/CCCOMA_X64FRE_EN-US_DV9
 diskutil eject disk4
 ```
+
+```bash
+diskutil eject disk4
+
+dism /split-image /imagefile:d:\install.wim /swmfile:c:\sources\install.swm /filesize:4000
+```
